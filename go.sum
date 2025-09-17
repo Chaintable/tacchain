@@ -227,8 +227,8 @@ github.com/Azure/go-ansiterm v0.0.0-20230124172434-306776ec8161 h1:L/gRVlceqvL25
 github.com/Azure/go-ansiterm v0.0.0-20230124172434-306776ec8161/go.mod h1:xomTg63KZ2rFqZQzSB4Vz2SUXa1BpHTVz9L5PTmPC4E=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
-github.com/Chaintable/cosmos-evm v0.0.0-20250916094604-bc1117411770 h1:FMaJozebYrlIbDQuZ7Qr8d78557UI/m5xeF22KwkbK8=
-github.com/Chaintable/cosmos-evm v0.0.0-20250916094604-bc1117411770/go.mod h1:kthk/QmpstaPB5USt4OIIoxqRBDcSqTv37fKWGFNUPM=
+github.com/Chaintable/cosmos-evm v0.0.0-20250917091409-4d24dca46d8c h1:EivN03hUZAdK7f0qqFzD0JyPRWBMHReHgE0a3LQw2Rg=
+github.com/Chaintable/cosmos-evm v0.0.0-20250917091409-4d24dca46d8c/go.mod h1:kthk/QmpstaPB5USt4OIIoxqRBDcSqTv37fKWGFNUPM=
 github.com/DataDog/datadog-go v3.2.0+incompatible h1:qSG2N4FghB1He/r2mFrWKCaL7dXCilEuNEeAn20fdD4=
 github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
 github.com/DataDog/zstd v1.5.5 h1:oWf5W7GtOLgp6bciQYDmhHHjdhYkALu6S/5Ni9ZgSvQ=
