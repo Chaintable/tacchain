@@ -62,7 +62,7 @@ jobs:
           provenance: false
 
   merge-docker-manifest:
-    runs-on: [self-hosted, ops]
+    runs-on: [self-hosted, general]
     needs: build-artifacts
     steps:
       - name: Checkout code
