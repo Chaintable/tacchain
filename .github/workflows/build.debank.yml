@@ -20,7 +20,7 @@ jobs:
   build-artifacts:
     strategy:
       matrix:
-        arch: [ amd64 ]
+        arch: [ arm64 ]
     runs-on: [ self-hosted, "${{ matrix.arch }}" ]
     steps:
 
