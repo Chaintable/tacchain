@@ -274,7 +274,7 @@ replace (
 	github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.50.13-0.20250319183239-53dea340efc7
 
 	// replace cosmos evm with our fork that uses geth v1.13.15
-	github.com/cosmos/evm => github.com/Chaintable/cosmos-evm v0.0.0-20250918021339-6a1c8534cc4d
+	github.com/cosmos/evm => github.com/Chaintable/cosmos-evm v0.0.0-20250922121426-07a2452271c3
 
 	// use Cosmos geth fork
 	// replace with our fork using geth v1.13.15
