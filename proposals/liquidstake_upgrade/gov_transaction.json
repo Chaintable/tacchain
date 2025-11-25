@@ -1,0 +1,79 @@
+{
+  "messages": [
+    {
+      "@type": "/cosmos.upgrade.v1beta1.MsgSoftwareUpgrade",
+      "authority": "tac10d07y265gmmuvt4z0w9aw880jnsr700jlgpywe",
+      "plan": {
+        "name": "v1.0.2",
+        "height": "400",
+        "info": "This proposal aims to add liquid stake possibility for the TAC network. whitelist_admin_address: tac15lvhklny0khnwy7hgrxsxut6t6ku2cgknw79fr",
+        "upgraded_client_state": null
+      }
+    },
+    {
+      "@type": "/cosmos.evm.vm.v1.MsgUpdateParams",
+      "authority": "tac10d07y265gmmuvt4z0w9aw880jnsr700jlgpywe",
+      "params": {
+        "evm_denom": "utac",
+        "extra_eips": [
+          "3855"
+        ],
+        "chain_config": {
+          "homestead_block": "0",
+          "dao_fork_block": "0",
+          "dao_fork_support": true,
+          "eip150_block": "0",
+          "eip155_block": "0",
+          "eip158_block": "0",
+          "byzantium_block": "0",
+          "constantinople_block": "0",
+          "petersburg_block": "0",
+          "istanbul_block": "0",
+          "muir_glacier_block": "0",
+          "berlin_block": "0",
+          "london_block": "0",
+          "arrow_glacier_block": "0",
+          "gray_glacier_block": "0",
+          "merge_netsplit_block": "0",
+          "chain_id": "2391",
+          "denom": "utac",
+          "decimals": "18",
+          "shanghai_time": "0",
+          "cancun_time": "0",
+          "prague_time": null,
+          "verkle_time": null
+        },
+        "allow_unprotected_txs": true,
+        "evm_channels": [],
+        "access_control": {
+          "create": {
+            "access_type": "ACCESS_TYPE_PERMISSIONLESS",
+            "access_control_list": []
+          },
+          "call": {
+            "access_type": "ACCESS_TYPE_PERMISSIONLESS",
+            "access_control_list": []
+          }
+        },
+        "active_static_precompiles": [
+          "0x0000000000000000000000000000000000000100",
+          "0x0000000000000000000000000000000000000400",
+          "0x0000000000000000000000000000000000000800",
+          "0x0000000000000000000000000000000000000801",
+          "0x0000000000000000000000000000000000000802",
+          "0x0000000000000000000000000000000000000803",
+          "0x0000000000000000000000000000000000000804",
+          "0x0000000000000000000000000000000000000805",
+          "0x0000000000000000000000000000000000000806",
+          "0x0000000000000000000000000000000000000807",
+          "0x0000000000000000000000000000000000001600"
+        ]
+      }
+    }
+  ],
+  "metadata": "https://github.com/TacBuild/tacchain/pull/61",
+  "deposit": "1000000000000000000utac",
+  "title": "Add liquid staking functionality to TAC network",
+  "summary": "The main liquid stake module is compatible with the existing staking and ERC-20 modules of the TAC node, introducing liquid staking tokens (gTAC) that are automatically represented as ERC-20 assets. The second module expands the capabilities of liquid staking and allows users to transfer staked funds to LST bypassing an unbound staking period",
+  "expedited": false
+}
