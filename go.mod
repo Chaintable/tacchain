@@ -246,7 +246,7 @@ require (
 	google.golang.org/genproto/googleapis/api v0.0.0-20241202173237-19429a94021a // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20241202173237-19429a94021a // indirect
 	google.golang.org/grpc v1.70.0 // indirect
-	google.golang.org/protobuf v1.36.5
+	google.golang.org/protobuf v1.36.5 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
@@ -274,7 +274,7 @@ replace (
 	github.com/cosmos/cosmos-sdk => github.com/TacBuild/cosmos-sdk v0.0.0-20251010131633-e43d8d10a9a9
 
 	// replace to cosmos/evm fork for liquid stake support. See: https://github.com/TacBuild/evm/pull/9
-	github.com/cosmos/evm => github.com/Chaintable/cosmos-evm v0.0.0-20260108071922-09a22ef67e9d
+	github.com/cosmos/evm => github.com/Chaintable/cosmos-evm v0.0.0-20260108074336-efce71de5f5b
 
 	// replace with our fork using geth v1.13.15
 	github.com/ethereum/go-ethereum => github.com/TacBuild/go-ethereum v0.0.0-20250428082551-b4f5a8f8420a
