@@ -13,6 +13,7 @@ import (
 	"github.com/cosmos/evm/x/epochs"
 	epochskeeper "github.com/cosmos/evm/x/epochs/keeper"
 	epochstypes "github.com/cosmos/evm/x/epochs/types"
+	"github.com/cosmos/gogoproto/proto"
 	"github.com/cosmos/ibc-go/modules/capability"
 	capabilitykeeper "github.com/cosmos/ibc-go/modules/capability/keeper"
 	capabilitytypes "github.com/cosmos/ibc-go/modules/capability/types"
@@ -36,8 +37,6 @@ import (
 	ibcexported "github.com/cosmos/ibc-go/v8/modules/core/exported"
 	ibckeeper "github.com/cosmos/ibc-go/v8/modules/core/keeper"
 	ibctm "github.com/cosmos/ibc-go/v8/modules/light-clients/07-tendermint"
-	"google.golang.org/protobuf/reflect/protoregistry"
-
 	// Force-load the tracer engines to trigger registration due to Go-Ethereum v1.10.15 changes
 	_ "github.com/ethereum/go-ethereum/eth/tracers/js"
 	_ "github.com/ethereum/go-ethereum/eth/tracers/native"
@@ -985,7 +984,10 @@ func NewTacChainApp(
 
 	// At startup, after all modules have been registered, check that all proto
 	// annotations are correct.
-	protoFiles := protoregistry.GlobalFiles
+	protoFiles, err := proto.MergedRegistry()
+	if err != nil {
+		panic(err)
+	}
 	err = msgservice.ValidateProtoAnnotations(protoFiles)
 	if err != nil {
 		// Once we switch to using protoreflect-based antehandlers, we might

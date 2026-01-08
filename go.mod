@@ -32,16 +32,7 @@ require (
 	github.com/stretchr/testify v1.10.0
 )
 
-require (
-	cosmossdk.io/errors v1.0.1 // indirect
-	github.com/coreos/go-semver v0.3.0 // indirect
-	github.com/coreos/go-systemd/v22 v22.5.0 // indirect
-	go.etcd.io/etcd/api/v3 v3.5.12 // indirect
-	go.etcd.io/etcd/client/pkg/v3 v3.5.12 // indirect
-	go.etcd.io/etcd/client/v3 v3.5.12 // indirect
-	go.uber.org/atomic v1.9.0 // indirect
-	go.uber.org/zap v1.21.0 // indirect
-)
+require cosmossdk.io/errors v1.0.1 // indirect
 
 require (
 	cloud.google.com/go v0.115.0 // indirect
@@ -283,7 +274,7 @@ replace (
 	github.com/cosmos/cosmos-sdk => github.com/TacBuild/cosmos-sdk v0.0.0-20251010131633-e43d8d10a9a9
 
 	// replace to cosmos/evm fork for liquid stake support. See: https://github.com/TacBuild/evm/pull/9
-	github.com/cosmos/evm => github.com/Chaintable/cosmos-evm v0.0.0-20251226060509-58d78d660c6f
+	github.com/cosmos/evm => github.com/Chaintable/cosmos-evm v0.0.0-20260108071922-09a22ef67e9d
 
 	// replace with our fork using geth v1.13.15
 	github.com/ethereum/go-ethereum => github.com/TacBuild/go-ethereum v0.0.0-20250428082551-b4f5a8f8420a
