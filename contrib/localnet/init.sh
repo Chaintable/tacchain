@@ -157,7 +157,22 @@ sed -i.bak "s/\"allow_unprotected_txs\": false/\"allow_unprotected_txs\": true/g
 sed -i.bak "s/allow-unprotected-txs = false/allow-unprotected-txs = true/g" $HOMEDIR/config/app.toml
 
 # set evm precompiles
-sed -i.bak "s/\"active_static_precompiles\": \[\]/\"active_static_precompiles\": \[\"0x0000000000000000000000000000000000000100\",\"0x0000000000000000000000000000000000000400\",\"0x0000000000000000000000000000000000000800\",\"0x0000000000000000000000000000000000000801\",\"0x0000000000000000000000000000000000000802\",\"0x0000000000000000000000000000000000000803\",\"0x0000000000000000000000000000000000000804\",\"0x0000000000000000000000000000000000000805\",\"0x0000000000000000000000000000000000000806\",\"0x0000000000000000000000000000000000000807\", \"0x0000000000000000000000000000000000001600\"\]/g" $HOMEDIR/config/genesis.json
+jq '
+  .app_state.evm.params.active_static_precompiles = [
+    "0x0000000000000000000000000000000000000100",
+    "0x0000000000000000000000000000000000000400",
+    "0x0000000000000000000000000000000000000800",
+    "0x0000000000000000000000000000000000000801",
+    "0x0000000000000000000000000000000000000802",
+    "0x0000000000000000000000000000000000000803",
+    "0x0000000000000000000000000000000000000804",
+    "0x0000000000000000000000000000000000000805",
+    "0x0000000000000000000000000000000000000806",
+    "0x0000000000000000000000000000000000000807",
+    "0x00000000000000000000000000000000000008f3",
+    "0x0000000000000000000000000000000000001600"
+  ]
+' "$HOMEDIR/config/genesis.json" > "$HOMEDIR/config/genesis_patched.json" && mv "$HOMEDIR/config/genesis_patched.json" "$HOMEDIR/config/genesis.json"
 
 # set x/feemarket min gas price
 sed -i.bak "s/\"min_gas_price\": \"0.000000000000000000\"/\"min_gas_price\": \"$MIN_GAS_PRICE\"/g" $HOMEDIR/config/genesis.json
@@ -212,7 +227,7 @@ sed -i.bak "s/cors_allowed_origins = \[\]/cors_allowed_origins = \[\"*\"\]/g" $H
 sed -i.bak "s/\"slash_fraction_downtime\": \"0.010000000000000000\"/\"slash_fraction_downtime\": \"$SLASH_DOWNTIME_PENALTY\"/g" $HOMEDIR/config/genesis.json
 sed -i.bak "s/\"signed_blocks_window\": \"100\"/\"signed_blocks_window\": \"$SLASH_SIGNED_BLOCKS_WINDOW\"/g" $HOMEDIR/config/genesis.json
 
-# add token metadata
+# add token metadata (TAC + gTAC)
 jq '
   .app_state.bank.denom_metadata = [
     {
@@ -235,22 +250,44 @@ jq '
       "symbol": "TAC",
       "uri": "",
       "uri_hash": ""
+    },
+    {
+      "description": "Liquid Staked TAC token",
+      "denom_units": [
+        {
+          "denom": "stk/utac",
+          "exponent": 0,
+          "aliases": []
+        },
+        {
+          "denom": "gTAC",
+          "exponent": 18,
+          "aliases": []
+        }
+      ],
+      "base": "stk/utac",
+      "display": "gTAC",
+      "name": "Gravity TAC",
+      "symbol": "gTAC",
+      "uri": "",
+      "uri_hash": ""
     }
   ]
 ' $HOMEDIR/config/genesis.json > $HOMEDIR/config/genesis_patched.json && mv $HOMEDIR/config/genesis_patched.json $HOMEDIR/config/genesis.json
 
+# gTAC ERC20 precompile address: keccak256("stk/utac") -> 0xa29260a07Ec319176A49f2710433F647E49B604f
 jq '
 .app_state.erc20 = {
     "params": {
         "enable_erc20": true,
         "native_precompiles": [
-          "0xD4949664cD82660AaE99bEdc034a0deA8A0bd517"
+          "0xa29260a07Ec319176A49f2710433F647E49B604f"
         ],
         "dynamic_precompiles": []
       },
       "token_pairs": [
         {
-            "erc20_address": "0xD4949664cD82660AaE99bEdc034a0deA8A0bd517",
+            "erc20_address": "0xa29260a07Ec319176A49f2710433F647E49B604f",
             "denom": "stk/utac",
             "enabled": true,
             "contract_owner": "OWNER_MODULE"
