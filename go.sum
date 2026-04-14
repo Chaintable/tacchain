@@ -227,6 +227,8 @@ github.com/Azure/go-ansiterm v0.0.0-20230124172434-306776ec8161 h1:L/gRVlceqvL25
 github.com/Azure/go-ansiterm v0.0.0-20230124172434-306776ec8161/go.mod h1:xomTg63KZ2rFqZQzSB4Vz2SUXa1BpHTVz9L5PTmPC4E=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
+github.com/Chaintable/cosmos-evm v0.0.0-20260414063444-a49036cb1138 h1:mEzFpEl7DwJqTk6t7y/KJHQaLr0bZc87rNtUnBXNPZE=
+github.com/Chaintable/cosmos-evm v0.0.0-20260414063444-a49036cb1138/go.mod h1:vYYTdKL30rTlmBD8y6w0Bo/fBBeWi3UMZLZGIKucnBw=
 github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
 github.com/DataDog/datadog-go v4.8.3+incompatible h1:fNGaYSuObuQb5nzeTQqowRAd9bpDIRRV4/gUtIBjh8Q=
 github.com/DataDog/datadog-go v4.8.3+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
@@ -244,8 +246,6 @@ github.com/StackExchange/wmi v1.2.1 h1:VIkavFPXSjcnS+O8yTq7NI32k0R5Aj+v39y29VYDO
 github.com/StackExchange/wmi v1.2.1/go.mod h1:rcmrprowKIVzvc+NUiLncP2uuArMWLCbu9SBzvHz7e8=
 github.com/TacBuild/cosmos-sdk v0.0.0-20251010131633-e43d8d10a9a9 h1:jMjIlOrdA+vBfZkuljd7V/54L1az5n3Sw12iE7Pea00=
 github.com/TacBuild/cosmos-sdk v0.0.0-20251010131633-e43d8d10a9a9/go.mod h1:0Fo5FGFsiXxRRrVm7hBwxzwCeHhNxFPIMUSXqe9P8aA=
-github.com/TacBuild/evm v0.0.0-20260404174920-617bbb7e445e h1:knz9ohMIso2MWq4lr0ezEVwWLj+9O01kVSXmgr70PAk=
-github.com/TacBuild/evm v0.0.0-20260404174920-617bbb7e445e/go.mod h1:9+gL3zGzrGuh1oF5vfFl7kuswgma6v7IN0KDbBmO0eA=
 github.com/TacBuild/go-ethereum v0.0.0-20250428082551-b4f5a8f8420a h1:d5s3in80qbAEpMLo2gVHKPrR6qn60nyxV+rK17tqZ1Q=
 github.com/TacBuild/go-ethereum v0.0.0-20250428082551-b4f5a8f8420a/go.mod h1:TN8ZiHrdJwSe8Cb6x+p0hs5CxhJZPbqB7hHkaUXcmIU=
 github.com/VictoriaMetrics/fastcache v1.12.1 h1:i0mICQuojGDL3KblA7wUNlY5lOK6a4bwt3uRKnkZU40=
