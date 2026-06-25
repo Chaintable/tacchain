@@ -12,7 +12,7 @@ This repo runs the chain's execution layer with the [Chaintable pipeline](https:
 ```
 Chaintable write node (this repo · producer, embeds pipeline tracer)
         │
-        ├─ block headers + state diffs ──────────────────→ Kafka + S3 ─→ leafage-evm (EVM state queries)
+        ├─ block headers + state diffs ─────────────────→ Kafka + S3 ─→ leafage-evm (EVM state queries)
         │
         └─ block files (tx · trace · receipts · events) ──→ S3 ─→ Chaintable indexing pipeline (tx/trace data)
 ```
