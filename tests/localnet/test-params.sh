@@ -4,10 +4,15 @@ export GENESIS_ACC_1_ADDRESS=tac1zg69v7ys40x77y352eufp27daufrg4nckcjrx2
 export GENESIS_ACC_2_ADDRESS=tac167a5p268zlj2tgmlrmhkcqyex07stu5k6s23lq
 export HOMEDIR=./.test-localnet-params
 export CHAIN_ID=tacchain_239-1
+export TACCHAIND=${TACCHAIND:-$(command -v tacchaind 2>/dev/null || echo ./build/tacchaind)}
 export VALIDATOR_1_MNEMONIC="spray retire festival globe nuclear festival install lunch deal bench unlock car solution vague witness weasel ankle rebel slush allow wing seek tobacco carbon" # tac1tg73cpsxxca3m2t6w09gezvcg37zrqqxglwsgv
 export VALIDATOR_2_MNEMONIC="coach deposit public fiction utility dentist course bread maple lawn dress bridge melody snake taxi suggest student vote actress shop man service bubble build" # tac137kh82tna99k9cdnvpga9jcme0tqn9up40f96g
 export VALIDATOR_3_MNEMONIC="brave name midnight glass story soda calm panel menu rescue check puzzle layer mango pull snake short spread virtual use already alone observe cream" # tac13gv56l9leqvdjj6y4cr0g8rtzudk5c65md003y
 export VALIDATOR_4_MNEMONIC="canal marble glimpse nurse afford medal film whale hockey defense mango visa romance plastic little cage balance special sibling clump machine wrestle energy acid" # tac1zh9dxqc28gx99gyeq6rfwmd623m77h00zykpvz
+
+tacchaind() {
+  "$TACCHAIND" "$@"
+}
 
 # start new multi-validator network
 echo "Starting new multi-validator network with 4 nodes"
@@ -230,32 +235,6 @@ expected_evm_params='{
   "extra_eips": [
     "3855"
   ],
-  "chain_config": {
-    "homestead_block": "0",
-    "dao_fork_block": "0",
-    "dao_fork_support": true,
-    "eip150_block": "0",
-    "eip155_block": "0",
-    "eip158_block": "0",
-    "byzantium_block": "0",
-    "constantinople_block": "0",
-    "petersburg_block": "0",
-    "istanbul_block": "0",
-    "muir_glacier_block": "0",
-    "berlin_block": "0",
-    "london_block": "0",
-    "arrow_glacier_block": "0",
-    "gray_glacier_block": "0",
-    "merge_netsplit_block": "0",
-    "chain_id": "239",
-    "denom": "utac",
-    "decimals": "18",
-    "shanghai_time": "0",
-    "cancun_time": "0",
-    "prague_time": null,
-    "verkle_time": null
-  },
-  "allow_unprotected_txs": true,
   "evm_channels": [],
   "access_control": {
     "create": {
@@ -280,7 +259,11 @@ expected_evm_params='{
     "0x0000000000000000000000000000000000000807",
     "0x00000000000000000000000000000000000008f3",
     "0x0000000000000000000000000000000000001600"
-  ]
+  ],
+  "history_serve_window": "8192",
+  "extended_denom_options": {
+    "extended_denom": "utac"
+  }
 }'
 evm_params=$(tacchaind q evm params --node http://localhost:45111 --output json | jq -r '.params')
 if [[ "$evm_params" != "$expected_evm_params" ]]; then
