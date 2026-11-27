@@ -1,6 +1,6 @@
 module github.com/TacBuild/tacchain
 
-go 1.23.8
+go 1.24.0
 
 require (
 	cosmossdk.io/api v0.9.2
@@ -48,7 +48,7 @@ require (
 	github.com/ethereum/c-kzg-4844/v2 v2.1.0 // indirect
 	github.com/ethereum/go-verkle v0.2.2 // indirect
 	github.com/ferranbt/fastssz v0.1.4 // indirect
-	github.com/go-jose/go-jose/v4 v4.1.1 // indirect
+	github.com/go-jose/go-jose/v4 v4.1.6 // indirect
 	github.com/go-viper/mapstructure/v2 v2.4.0 // indirect
 	github.com/mdp/qrterminal/v3 v3.2.1 // indirect
 	github.com/minio/sha256-simd v1.0.0 // indirect
